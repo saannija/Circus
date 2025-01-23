@@ -1,4 +1,4 @@
-# Circus_K
+# Circus
 Unity 2.5D circus game project
 
 ### To do list:
