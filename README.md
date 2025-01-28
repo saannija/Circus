@@ -2,11 +2,10 @@
 Unity 2.5D circus game project
 
 ### To do list:
-- [ ] Create main menu
+- [x] Create main menu
 - [x] Change cursor
 - [x] Add animation to dice and clouds
-- [ ] Add sounds and music
-- [ ] Create character selection screen
+- [x] Add sounds and music
+- [x] Create character selection screen
 - [ ] Create settings menu
 - [ ] Create second screen
-- [ ] Fix dice roll not working

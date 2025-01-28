@@ -29,7 +29,7 @@ public class FadeScript : MonoBehaviour
         img.raycastTarget = false;
     }
     
-    IEnumerator FadeIn(float seconds)
+    public IEnumerator FadeIn(float seconds)
     {
         img.raycastTarget = true;
         for (float a = 0f; a <= 1.05f; a += 0.05f)
