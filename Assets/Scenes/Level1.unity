@@ -666,10 +666,10 @@ MonoBehaviour:
   - {fileID: 1469044354333361084, guid: b23c62b674a613b4aa0925c6119cd969, type: 3}
   - {fileID: 5084813683068340511, guid: 48803de3832af434b9a87ef4451eb511, type: 3}
   - {fileID: 2842950813804736374, guid: a16029ed6cf8d9146a7cb568f9b157bf, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7479163075750556776, guid: b37c4d26dc696c54e8638ee813913917, type: 3}
+  - {fileID: 8770585074463099782, guid: de4fcfc352c0e054fa6b8745549b2523, type: 3}
+  - {fileID: 1105933179862056631, guid: c965df71ac474fa4ea4ebe6b8383e722, type: 3}
+  - {fileID: 3204039022388414152, guid: 9ff502d6441d2b74890b1ecdb85fd52b, type: 3}
   spawnPoint: {fileID: 855996434}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
