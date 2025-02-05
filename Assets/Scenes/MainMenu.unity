@@ -1558,9 +1558,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2058378165}
-          m_TargetAssemblyTypeName: CursorScript, Assembly-CSharp
-          m_MethodName: ButtonClicked
+        - m_Target: {fileID: 2058378167}
+          m_TargetAssemblyTypeName: SoundEffectsScript, Assembly-CSharp
+          m_MethodName: Clicked
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1595,6 +1595,18 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 414877694}
+          m_TargetAssemblyTypeName: SetActiveScript, Assembly-CSharp
+          m_MethodName: ToggleActiveAfterDelay
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -2714,7 +2726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &414877693
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7517,7 +7529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1441858838
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7557,7 +7569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ff9e5a10d149d45a09cd060ed38aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject2: {fileID: 0}
+  gameObject2: {fileID: 414877692}
 --- !u!1 &1467077901
 GameObject:
   m_ObjectHideFlags: 0
@@ -7991,23 +8003,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556094217839179923, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4556094217839179923, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10181,6 +10193,7 @@ GameObject:
   - component: {fileID: 2058378167}
   - component: {fileID: 2058378168}
   - component: {fileID: 2058378169}
+  - component: {fileID: 2058378170}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -10251,6 +10264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScript: {fileID: 1733947133}
+  saveLoadScript: {fileID: 2058378170}
 --- !u!114 &2058378169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10274,6 +10288,18 @@ MonoBehaviour:
   inputField: {fileID: 1240663067}
   playerCount: 2
   sceneChangeScript: {fileID: 2058378168}
+--- !u!114 &2058378170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058378164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864f7e9e586c7c14e97ad4578a6b328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2064419264
 GameObject:
   m_ObjectHideFlags: 0

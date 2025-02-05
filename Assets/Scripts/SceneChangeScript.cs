@@ -8,6 +8,7 @@ public class SceneChangeScript : MonoBehaviour
 {
 
     public FadeScript fadeScript;
+    public SaveLoadScript saveLoadScript;
 
     public void CloseGame()
     {
@@ -18,7 +19,7 @@ public class SceneChangeScript : MonoBehaviour
     {
         if (string.Equals(command, "quit", StringComparison.OrdinalIgnoreCase))
         {
-            yield return fadeScript.FadeIn(0.1f);
+            yield return fadeScript.FadeIn(0.05f);
             PlayerPrefs.DeleteAll();
             if(UnityEditor.EditorApplication.isPlaying)
             {
@@ -31,7 +32,8 @@ public class SceneChangeScript : MonoBehaviour
         }
         else if (string.Equals(command, "play", StringComparison.OrdinalIgnoreCase))
         {
-            yield return fadeScript.FadeIn(0.1f);
+            yield return fadeScript.FadeIn(0.05f);
+            saveLoadScript.SaveGame(characterIndex, name);
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
     }
