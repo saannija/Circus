@@ -445,7 +445,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ff9e5a10d149d45a09cd060ed38aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject2: {fileID: 414877692}
+  buttonGroup: {fileID: 0}
+  characterSelection: {fileID: 414877692}
+  settingsButtons: {fileID: 0}
+  leaderboardButtons: {fileID: 0}
 --- !u!1 &88211939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1656,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 314006096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2058378171}
+        m_TargetAssemblyTypeName: SetActiveScript, Assembly-CSharp
+        m_MethodName: OpenSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &314006096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2200,7 +2215,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348118669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2058378171}
+        m_TargetAssemblyTypeName: SetActiveScript, Assembly-CSharp
+        m_MethodName: OpenCharacterSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &348118669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2726,7 +2753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &414877693
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2762,7 +2789,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ff9e5a10d149d45a09cd060ed38aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject2: {fileID: 35936672}
+  buttonGroup: {fileID: 0}
+  characterSelection: {fileID: 35936672}
+  settingsButtons: {fileID: 0}
+  leaderboardButtons: {fileID: 0}
 --- !u!1 &448002229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,7 +5008,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 35936674}
+        - m_Target: {fileID: 1441858839}
           m_TargetAssemblyTypeName: SetActiveScript, Assembly-CSharp
           m_MethodName: ToggleActiveAfterDelay
           m_Mode: 4
@@ -5033,7 +5063,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 788246477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2058378171}
+        m_TargetAssemblyTypeName: SetActiveScript, Assembly-CSharp
+        m_MethodName: CloseSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &788246477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7529,7 +7571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1441858838
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7569,7 +7611,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ff9e5a10d149d45a09cd060ed38aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject2: {fileID: 414877692}
+  buttonGroup: {fileID: 0}
+  characterSelection: {fileID: 414877692}
+  settingsButtons: {fileID: 0}
+  leaderboardButtons: {fileID: 0}
 --- !u!1 &1467077901
 GameObject:
   m_ObjectHideFlags: 0
@@ -8003,23 +8048,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556094217839179923, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4556094217839179923, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4556094218448167549, guid: ca3f44c2efae4dd418e0fbffc0eb5071, type: 3}
       propertyPath: m_SizeDelta.x
@@ -8677,7 +8722,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1627783206}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2058378171}
+        m_TargetAssemblyTypeName: SetActiveScript, Assembly-CSharp
+        m_MethodName: CloseCharacterSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1627783206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10194,6 +10251,7 @@ GameObject:
   - component: {fileID: 2058378168}
   - component: {fileID: 2058378169}
   - component: {fileID: 2058378170}
+  - component: {fileID: 2058378171}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -10300,6 +10358,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864f7e9e586c7c14e97ad4578a6b328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2058378171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058378164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ff9e5a10d149d45a09cd060ed38aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonGroup: {fileID: 414877692}
+  characterSelection: {fileID: 35936672}
+  settingsButtons: {fileID: 1441858837}
+  leaderboardButtons: {fileID: 0}
 --- !u!1 &2064419264
 GameObject:
   m_ObjectHideFlags: 0
