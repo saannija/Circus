@@ -21,8 +21,10 @@ public class ResolutionScript : MonoBehaviour
             {
                 currentResolutionIndex = i;
             }
-            resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionSetting", currentResolutionIndex);
+            //resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionSetting", currentResolutionIndex);
+            resolutionDropdown.value = 0;
             resolutionDropdown.RefreshShownValue();
+            Screen.SetResolution(resolutions[0].width, resolutions[0].height, FullScreenMode.FullScreenWindow);
             resolutionDropdown.onValueChanged.AddListener(SetResolution);
         }
     }
@@ -30,7 +32,7 @@ public class ResolutionScript : MonoBehaviour
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-        PlayerPrefs.SetInt("ResolutionSetting", resolutionIndex);
+        Screen.SetResolution(resolution.width, resolution.height, FullScreenMode.FullScreenWindow);
+        //PlayerPrefs.SetInt("ResolutionSetting", resolutionIndex);
     }
 }
