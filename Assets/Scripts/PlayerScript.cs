@@ -20,17 +20,28 @@ public class PlayerScript : MonoBehaviour
 
         mainCharacter.GetComponent<NameScript>().SetPlayerName(PlayerPrefs.GetString("PlayerName"));
 
+        if (mainCharacter.GetComponent<PlayerController>() == null)
+        {
+            mainCharacter.AddComponent<PlayerController>();
+        }
+
+        mainCharacter.tag = "Player";
+
         otherPlayers = new int[PlayerPrefs.GetInt("PlayerCount")];
         string[] nameArray = ReadLinesFromFile(textFileName);
 
-        for (int i=0; i<otherPlayers.Length-1; i++)
+        for (int i = 0; i < otherPlayers.Length - 1; i++)
         {
             spawnPoint.transform.position += new Vector3(0.2f, 0, 0.08f);
             index = Random.Range(0, playerPrefabs.Length);
             GameObject character = Instantiate(playerPrefabs[index], spawnPoint.transform.position, Quaternion.identity);
             character.GetComponent<NameScript>().SetPlayerName(nameArray[Random.Range(0, nameArray.Length - 1)]);
-        }
 
+            if (character.GetComponent<PlayerController>() == null)
+            {
+                character.AddComponent<PlayerController>();
+            }
+        }
     }
 
     string[] ReadLinesFromFile(string fileName)

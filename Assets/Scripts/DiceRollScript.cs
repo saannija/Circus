@@ -30,12 +30,21 @@ public class DiceRollScript : MonoBehaviour
 
     public void RollDice()
     {
-        body.isKinematic = false;
-        forceX = Random.Range(0, maxRandForceVal);
-        forceY = Random.Range(0, maxRandForceVal);
-        forceZ = Random.Range(0, maxRandForceVal);
+        body.velocity = Vector3.zero;
+        body.angularVelocity = Vector3.zero;
 
-        body.AddForce(Vector3.up * Random.Range(800, startRollingForce));
+        body.isKinematic = true;
+
+        transform.rotation = Quaternion.Euler(Random.Range(0, 10), Random.Range(0, 360), Random.Range(0, 10));
+
+        body.isKinematic = false;
+
+        float upForce = isLanded ? Random.Range(300, startRollingForce) : Random.Range(800, startRollingForce);
+        forceX = Random.Range(500, maxRandForceVal / 2); 
+        forceY = Random.Range(500, maxRandForceVal / 2);
+        forceZ = Random.Range(500, maxRandForceVal / 2);
+
+        body.AddForce(Vector3.up * upForce);
         body.AddTorque(forceX, forceY, forceZ);
     }
 
@@ -49,20 +58,38 @@ public class DiceRollScript : MonoBehaviour
 
     private void Update()
     {
-        if(body != null)
+        if (body != null)
         {
-            if(Input.GetMouseButton(0) && isLanded || Input.GetMouseButton(0) && !firstThrow)
+            PlayerController mainPlayer = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
+
+            if (mainPlayer != null && mainPlayer.isMoving) return;
+
+            if (Input.GetMouseButton(0) && isLanded || Input.GetMouseButton(0) && !firstThrow)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (hit.collider != null & hit.collider.gameObject == this.gameObject)
+                    if (hit.collider != null && hit.collider.gameObject == this.gameObject)
                     {
-                        if(!firstThrow)
+                        if (!firstThrow)
                         {
                             firstThrow = true;
                         }
+
+                        if (mainPlayer != null)
+                        {
+                            SideDetectionScript sideDetection = FindObjectOfType<SideDetectionScript>();
+                            if (sideDetection != null)
+                            {
+                                sideDetection.AssignCurrentPlayer(mainPlayer);
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("Main player not found!");
+                        }
+
                         RollDice();
                     }
                 }
