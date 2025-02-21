@@ -1,20 +1,47 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public int currentTileIndex = 0;
     public float moveSpeed = 5f;
     public bool isMoving = false;
+    public int diceRolls = 0;
+    private float startTime;
+    
+    public GameObject winPanel;
+    public GameObject leaderboardPanel;
+    public GameObject buttonGroup;
 
     void Start()
     {
         Debug.Log(gameObject.name + " has PlayerController attached!");
+        startTime = Time.time;
+
+        if (winPanel == null)
+        {
+            winPanel = GameObject.Find("WinPanel");
+            if (winPanel == null)
+            {
+                Debug.LogError("Win Panel could not be found in the scene!");
+            }
+            else
+            {
+                Debug.Log("Win Panel found successfully!");
+                winPanel.SetActive(false);
+            }
+        }
+
+        if (leaderboardPanel != null)
+        {
+            leaderboardPanel.SetActive(false);
+        }
     }
-    
+
     public void MovePlayer(int steps)
     {
-        Debug.Log(gameObject.name + " is moving " + steps + " steps!");
+        diceRolls++;
         StartCoroutine(MoveToTile(currentTileIndex + steps));
     }
 
@@ -101,7 +128,53 @@ public class PlayerController : MonoBehaviour
         {
             currentTileIndex = BoardManager.Instance.boardTiles.Count - 1;
             Debug.Log(gameObject.name + " has reached the final tile!");
+
+            float completionTime = Time.time - startTime;
+            LeaderboardManager leaderboard = FindObjectOfType<LeaderboardManager>();
+            GameTimer gameTimer = FindObjectOfType<GameTimer>();
+
+            if (gameTimer != null)
+            {
+                gameTimer.StopTimer();
+                Debug.Log("Timer stopped.");
+            }
+            else
+            {
+                Debug.LogError("GameTimer not found!");
+            }
+
+            if (gameObject.CompareTag("Player") && leaderboard != null)
+            {
+                leaderboard.AddNewScore(PlayerPrefs.GetString("PlayerName"), completionTime, diceRolls);
+                Debug.Log($"Saved to leaderboard: {PlayerPrefs.GetString("PlayerName")} - Time: {completionTime:F1}s - Rolls: {diceRolls}");
+                
+                if (winPanel != null)
+                {
+                    Debug.Log("Activating Win Panel...");
+                    winPanel.SetActive(true);
+                }
+            }
+
+            Time.timeScale = 0f;
             isMoving = false;
         }
+    }
+
+    public void OpenLeaderboard()
+    {
+        if (buttonGroup != null) buttonGroup.SetActive(false);
+        if (leaderboardPanel != null) leaderboardPanel.SetActive(true);
+    }
+
+    public void CloseLeaderboard()
+    {
+        if (leaderboardPanel != null) leaderboardPanel.SetActive(false);
+        if (buttonGroup != null) buttonGroup.SetActive(true);
+    }
+
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }
